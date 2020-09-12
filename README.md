@@ -3,10 +3,16 @@
 ## Usage
 
 You're free to scale your project inside ```src/``` directory, `CMakeLists.txt` file is already set up for this.
+
 To add a library to your project 
 - list its names in dependencies vcpkg.json.
 - run vcpkg install <library>
 - integrate a library for IDE vcpkg integrate install
+- add two lines of code to CMakeLists.txt file
+```CMake
+find_package(<library> CONFIG REQUIRED)
+target_link_libraries(example PRIVATE <library>)
+```
  
 ## Running Project
 
