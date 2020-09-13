@@ -2,6 +2,8 @@
 
 ## Usage
 
+##### Editing
+
 You're free to scale your project inside ```src/``` directory, `CMakeLists.txt` file is already set up for this.
 
 To add a library to your project 
@@ -13,8 +15,13 @@ To add a library to your project
 find_package(<library> CONFIG REQUIRED)
 target_link_libraries(example PRIVATE <library>)
 ```
+
+You can use absolute path include for your header / cxx files:
+```cpp
+#include "src/header_components/<header.h>"
+```
  
-## Running Project
+##### Running Project
 
 If you use UNIX, cmake may be denied access to launch vcpkg, to prevent this, recursively change the ownership of the vcpkg directory to yourself from root or use sudo to launch cmake. If you decided to use sudo as a prefix, `build/` directory will be owned by root, so you'd need to apply either of previos steps about build/ directory.
 
